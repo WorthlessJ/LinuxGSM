@@ -60,6 +60,23 @@ fn_default_config_local(){
 	fn_sleep_time
 }
 
+# Lists local config file locations
+fn_list_config_locations(){
+	echo -e "${lightyellow}Config Locations${default}"
+	echo -e "================================="
+	if [ -n "${servercfgfullpath}" ]; then
+			if [ -f "${servercfgfullpath}" ]; then
+				echo -e "${lightblue}Game Server Config file:\t${default}${servercfgfullpath}"
+			elif [ -d "${servercfgfullpath}" ]; then
+				echo -e "${lightblue}Game Server Config dir:\t${default}${servercfgfullpath}"
+			else
+				echo -e "${lightblue}Config file:\t${default}${red}${servercfgfullpath}${default} (${red}FILE MISSING${default})"
+			fi
+	fi
+	echo -e "LinuxGSM config: ${lgsmdir}/config-lgsm/${servername}"
+	echo -e "More information in Docs: https://docs.linuxgsm.com/configuration/game-server-config"
+}
+
 # Changes some variables within the default configs.
 # SERVERNAME to LinuxGSM
 # PASSWORD to random password
