@@ -66,11 +66,11 @@ fn_list_config_locations(){
 	echo -e "================================="
 	if [ -n "${servercfgfullpath}" ]; then
 			if [ -f "${servercfgfullpath}" ]; then
-				echo -e "${lightblue}Game Server Config file:\t${default}${servercfgfullpath}"
+				echo -e "Game Server Config file:\t${servercfgfullpath}"
 			elif [ -d "${servercfgfullpath}" ]; then
-				echo -e "${lightblue}Game Server Config dir:\t${default}${servercfgfullpath}"
+				echo -e "Game Server Config dir:\t${servercfgfullpath}"
 			else
-				echo -e "${lightblue}Config file:\t${default}${red}${servercfgfullpath}${default} (${red}FILE MISSING${default})"
+				echo -e "Config file:\t${red}${servercfgfullpath} (${red}FILE MISSING${default})"
 			fi
 	fi
 	echo -e "LinuxGSM config: ${lgsmdir}/config-lgsm/${servername}"
